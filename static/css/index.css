@@ -1,0 +1,203 @@
+@import url(http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
+html,body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	/*font-family: arial, serif, sans-serif;*/
+	font-family: "Jeju Myeongjo", "Times New Roman", Times, serif;
+	font-size: 0.9em;
+}
+
+#wrapper {
+	display: table;
+	background: #F2F2F2;
+	width: 100%;
+	height: 100%;
+}
+
+#middle-wrapper {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#main-wrapper {
+	margin: auto;
+	display: inline-block;
+	background: white;
+	border-radius: 25px;
+	width: 35%;
+	height: 85%;
+}
+
+#main-wrapper > div {
+	/*border: 1px dashed red;*/
+	margin: 5%;
+}
+
+#logo {
+	border: 1px dashed red;
+	display: table;
+	width: 90%;
+	height: 35%;
+	
+}
+#logo > div {
+	display:table-cell;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px dashed blue;
+}
+#logo > div > div {
+	display: inline-block;
+	margin: auto;
+	font-size: 2.5em;
+	opacity: 0.7;
+	background-image: linear-gradient(90deg, #FF4848, #FFCD12, #EDD200, #8DB72A, #6799FF, #6A65FD, #B95AFF);
+	-webkit-background-clip: text;
+	color: transparent;
+}
+
+.form-area {
+	height: 65%;
+}
+
+.form-field {
+	/**height: 15%;*/
+	margin-bottom: 5%;
+	vertical-align: middle;
+}
+
+.label-div {
+	margin-left: 5%;
+	margin-bottom: 10px;
+	text-align: left;
+}
+
+#upload {
+	display: inline-block;
+	width: 40%;
+	padding: 4px;
+	border: 1px solid white;
+	border-radius: 5px;
+	box-shadow: -3px -3px 5px rgba(255, 255, 255, 0.8), 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+#upload:hover {
+	border: none;
+	background: #4DA0FF;
+	color: #FFFFFF;
+	padding: 4px;
+	border: 1px solid white;
+    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8), 6px 6px 10px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+}
+
+#fileTag {
+	display: none;
+	font-family: "Jeju Myeongjo", "Times New Roman", Times, serif;	
+}
+
+#info {
+	visibility: hidden;
+}
+
+#image-field {
+	height:30%;
+	/*border: 1px solid black;*/
+	margin-bottom: 10px;
+	overflow: auto;
+}
+
+.image {
+	width:50px;
+	height:50px;
+	margin: 2px;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+/* -----------------------input text------------------------*/
+.text-field {
+	width: 90%;
+	border: 0;
+	padding-bottom: 8px;
+	border-bottom: 2px solid #BDBDBD;
+}
+.text-field:focus {
+	width: 90%;
+	top: 0;
+	left: 0;
+	border: 0;
+	outline: none;
+	padding-bottom: 8px;
+	border-bottom: 2px solid #4DA0FF;
+}
+/* ---------------------------------------------------------- */
+/* -----------------------input button------------------------*/
+#btn-div {
+	height: 13%;
+}
+.button {
+	width: 50%;
+	height: 80%;
+	position: relative;
+    background: #4DA0FF;
+    border-radius: 20px;
+    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8), 6px 6px 10px rgba(0, 0, 0, 0.2);
+	color: #FFFFFF;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+	font-family: "Jeju Myeongjo", "Times New Roman", Times, serif;	
+    font-size: 1em;
+	border: none;
+	outline: none;
+}
+.button:hover {
+	border: none;
+	outline: none;
+	color: #CEFBC9;
+    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8), 6px 6px 10px rgba(0, 0, 0, 0.2);
+}
+.button:active {
+	border: none;
+	outline: none;
+	opacity: 0.7;
+    box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5), inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+    color: #FFFFFF;
+}
+.button:disabled {
+	background: lightgrey;
+	border: none;
+	outline: none;
+	color: #FFFFFF;
+	opacity: 1;
+}
+/* ---------------------------------------------------------- */
+
+@media(max-width:480px) {
+	#main-wrapper {
+		margin: auto;
+		display: inline-block;
+		background: white;
+		border-radius: 25px;
+		width: 95%;
+		height: 95%;
+	}
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Family Register</title>
+	<link rel="stylesheet"  href="{{ url_for('static', filename='css/index.css') }}"/>
+	<link rel="shortcut icon" href="#" />
+	{% with messages = get_flashed_messages() %}
+    	{% if messages[0] == 'success' %}
+        	<script>
+            	alert('등록 완료')
+	        </script>
+		{% elif messages[0] == 'failed' %}
+			<script>
+				alert('등록 실패')
+			</script>
+    	{% endif %}
+	{% endwith %}
+</head>
+<body>
+
+<div id='wrapper'>
+	<div id='middle-wrapper'>
+		<div id='main-wrapper'>
+			<div id='logo'><div><div>Welcome</div></div></div>
+			<form action='/register' method='POST' class='form-area'>
+				<div class='label-div'>사용자 등록</div>
+				<div class='form-field'><input type='text' id='nameField' name='name' class='text-field' placeholder='Name' required></div>
+        		<div class='label-div'>얼굴인식 사진 불러오기</div>
+            	<div class='form-field'>
+					<label for='fileTag' id='upload'>Upload</label>
+					<input type='file' id='fileTag' accept='.jpg, .png, .jpeg' multiple />
+				</div>
+				<div id='info' class='label-div'>삭제하고 싶은 이미지는 더블클릭하세요.</div>
+				<div id='image-field'></div>
+				<div class='form-field' id='btn-div'><input type='submit' id='submitbtn' value='등록' class='button' disabled='disabled'></div>
+				<input type='none' id='hidden' name='images' value='' style='display:none;'/>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</html>
