@@ -1,6 +1,4 @@
-import os, base64, binascii
-from io import BytesIO
-from PIL import Image
+import os
 from flask import Flask, render_template, request, flash, url_for, redirect
 app = Flask(__name__)
 
@@ -16,30 +14,20 @@ def info():
 def register():
 	if request.method == 'POST':
 		try:
-			pathList = []
 			name = request.form['name']
-			images = request.form['images']
+			images = request.files.getlist('images')
 			path, resNum = folderCheck(name)
 
-			imgList = images.split(';end;')
-			imgList.pop()
-			for img in imgList:
-				imgType = img[11:15]
+			for image in images:
+				imgType = image.filename.split('.')[1]
 				imgName = 'image' + str(resNum) + '.' + imgType
 				resNum += 1
-				pathList.append(path+imgName)
-				saveImg(img, path+imgName)
+				image.save(path+imgName)
+
 			flash('success')
 		except:
 			flash('failed')
 	return redirect(url_for('index'))
-
-def saveImg(img, fileName):
-	starter = img.find(',')
-	image_data = img[starter+1:]
-	image_data = bytes(image_data, encoding="ascii")
-	im = Image.open(BytesIO(base64.b64decode(image_data)))
-	im.save(fileName)
 
 
 def folderCheck(name):

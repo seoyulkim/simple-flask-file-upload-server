@@ -25,18 +25,16 @@
 	<div id='middle-wrapper'>
 		<div id='main-wrapper'>
 			<div id='logo'><div><div>Welcome</div></div></div>
-			<form action='/register' method='POST' class='form-area'>
-				<div class='label-div'>사용자 등록</div>
+			<form action='/register' method='POST' class='form-area' enctype='multipart/form-data'>
+				<div class='label-div'>- 사용자 등록 -</div>
 				<div class='form-field'><input type='text' id='nameField' name='name' class='text-field' placeholder='Name' required></div>
-        		<div class='label-div'>얼굴인식 사진 불러오기</div>
+        		<div class='label-div'>- 얼굴인식 사진 불러오기 -</div>
             	<div class='form-field'>
 					<label for='fileTag' id='upload'>Upload</label>
-					<input type='file' id='fileTag' accept='.jpg, .png, .jpeg' multiple />
+					<input type='file' id='fileTag' name='images' accept='.jpg, .png, .jpeg' multiple />
 				</div>
-				<div id='info' class='label-div'>삭제하고 싶은 이미지는 더블클릭하세요.</div>
 				<div id='image-field'></div>
 				<div class='form-field' id='btn-div'><input type='submit' id='submitbtn' value='등록' class='button' disabled='disabled'></div>
-				<input type='none' id='hidden' name='images' value='' style='display:none;'/>
 			</form>
 		</div>
 	</div>
